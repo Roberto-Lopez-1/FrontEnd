@@ -1,0 +1,35 @@
+.modal-custom {
+  background-color: #0a0a0a;
+  border: 3px solid #00ff00;
+  color: #1e90ff;
+  font-family: "Orbitron", "Roboto", Arial, sans-serif;
+}
+
+.modal-custom .modal-header,
+.modal-custom .modal-footer {
+  border-color: #00ff00;
+}
+
+.modal-custom .modal-title {
+  color: #1e90ff;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 1.8rem;
+}
+
+.modal-custom #modalDescripcionProducto,
+.modal-custom #modalPrecioProducto {
+  color: #ffffff;
+  font-family: "Orbitron", "Roboto", Arial, sans-serif;
+  font-size: 1.1rem;
+}
+
+.btn-close-white {
+  filter: invert(1);
+}
+
+.btn-gamer,
+.btn-gamer-cart,
+.btn-gamer-review,
+.btn-gamer-close {
+  border-radius: 22px;
+}

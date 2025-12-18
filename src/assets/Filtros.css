@@ -1,0 +1,121 @@
+.filters-container {
+  background-color: #111;
+  border: 1px solid #39ff14;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  transition: box-shadow 0.3s;
+}
+
+.filters-container:hover {
+  box-shadow: 0 5px 15px rgba(57, 255, 20, 0.3);
+}
+
+.filters-title {
+  color: #1e90ff;
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.filters-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.filter-group {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 250px;
+}
+
+.filter-group label {
+  color: #1e90ff;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.filter-group select,
+.filter-group input {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #39ff14;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.filter-group select:hover,
+.filter-group input:hover {
+  border-color: #39ff14;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  outline: none;
+  border-color: #39ff14;
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+}
+
+.price-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.price-group {
+  flex: 1;
+}
+
+/* Estilo para las opciones del select */
+.filter-group select option {
+  background-color: #2d2d2d;
+  color: white;
+}
+
+/* Estilo para el placeholder de los inputs */
+.filter-group input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Desactivar las flechas de los inputs number */
+.filter-group input[type="number"]::-webkit-inner-spin-button,
+.filter-group input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.filter-group input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Estilo para los valores de precio */
+.price-value {
+  color: #39ff14;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filter-group {
+    min-width: 100%;
+  }
+
+  .filters-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

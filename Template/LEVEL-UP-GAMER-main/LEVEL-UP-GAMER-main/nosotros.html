@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Level-Up Gamer</title>
+
+    <!-- Fuentes de Google -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!--  CSS  -->
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/login_modal.css" />
+    <link rel="stylesheet" href="assets/css/carrito.css" />
+    <link rel="stylesheet" href="assets/css/descripcion.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="gamer-navbar">
+        <div class="gamer-navbar-logo">
+          <img src="assets/Imagen/level-up.png" alt="Logo gamer" />
+          <span>LEVEL-UP GAMER</span>
+        </div>
+        <div class="gamer-navbar-actions">
+          <a href="index.html" class="home-btn" id="homeBtn">
+            <i class="fa fa-home"></i> Inicio
+          </a>
+          <a href="comunidad.html" class="comunidad-btn" id="comunidadBtn">
+            <i class="fa fa-users"></i> Comunidad
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="container my-5 gamer-about-section">
+      <h2 class="text-light mb-4">
+        <i class="fa fa-users"></i> ¿Quiénes Somos?
+      </h2>
+      <div class="bg-dark text-white p-4 rounded shadow">
+        <p>
+          <strong>Level-Up Gamer</strong> es una tienda online dedicada a
+          satisfacer las necesidades de los entusiastas de los videojuegos en
+          Chile. Lanzada hace dos años como respuesta a la creciente demanda
+          durante la pandemia, Leves-Up Gamer ofrece una amplia gama de
+          productos para gamers, desde consolas y accesorios hasta computadores
+          y sillas especializadas. Aunque no cuenta con una ubicación física,
+          realiza despachos a todo el país.
+        </p>
+        <h3>Mision</h3>
+        <p>
+          Proporcionar productos de alta calidad para gamers en todo Chile,
+          ofreciendo una experiencia de compra única y personalizada, con un
+          enfoque en la satisfacción del cliente y el crecimiento de la
+          comunidad gamer.
+        </p>
+        <h3>Mision</h3>
+        <p>
+          Ser la tienda online líder en productos para gamers en Chile,
+          reconocida por su innovación, servicio al cliente excepcional, y un
+          programa de fidelización basado en gamificación que recompense a
+          nuestros clientes más fieles.
+        </p>
+        <p>
+          Creemos en la comunidad, en compartir logros y en subir de nivel
+          juntos. Ya seas fan de <span class="text-success">PlayStation</span>,
+          <span class="text-primary">Xbox</span>,
+          <span class="text-info">PC</span> o
+          <span class="text-danger">Nintendo</span>, tenemos un lugar para ti.
+        </p>
+        <div class="text-center mt-4">
+          <img
+            src="assets/Imagen/nosotros.png"
+            alt="Comunidad gamer"
+            class="img-fluid rounded shadow"
+            width="400"
+          />
+          <p class="mt-2 fst-italic">
+            "Tu próxima aventura empieza en Level-Up Gamer"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal-bg" id="loginModal">
+      <div class="modal-gamer-login">
+        <button class="close-modal" id="closeLoginModal">&times;</button>
+        <img
+          src="assets/Imagen/level-up.png"
+          style="height: 70px; display: block; margin: 0 auto 10px"
+        />
+        <h2>Inicio de Sesión</h2>
+        <form autocomplete="off">
+          <label for="userMail">Correo @duoc.cl</label>
+          <input
+            type="email"
+            id="userMail"
+            placeholder="usuario@duoc.cl"
+            required
+          />
+          <label for="userPass">Contraseña</label>
+          <input type="password" id="userPass" placeholder="" required />
+          <button type="submit" class="btn-gamer-green">Ingresar</button>
+          <button type="button" class="btn-gamer-profile" id="perfilBtn">
+            <i class="fa fa-user-circle"></i> Perfil
+          </button>
+          <button type="button" class="btn-gamer-outline" id="registrarBtn">
+            <a href="registrar.html">Crear una cuenta</a>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer-gamer mt-5 py-5">
+      <div class="container">
+        <div class="row text-white">
+          <div class="col-12 col-md-4 mb-4 mb-md-0">
+            <h4 class="footer-title">Ayuda</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="https://wa.me/56912345678?text=Hola,%20necesito%20ayuda%20con%20el%20servicio%20técnico%20de%20Level-Up%20Gamer"
+                  target="_blank"
+                  class="centro-ayuda-enlace"
+                >
+                  Centro de ayuda
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-4 mb-4 mb-md-0">
+            <h4 class="footer-title">Nosotros</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="nosotros.html" class="footer-link">Quiénes somos</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <h4 class="footer-title">Comunidad Level-UP</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="comunidad.html" class="footer-link">Comunidad</a>
+              </li>
+              <li>
+                <a href="comunidad.html" class="footer-link">Redes Sociales</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/carrito.js"></script>
+    <script src="assets/js/categoria.js"></script>
+    <script src="assets/js/buscador.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/producto.js"></script>
+  </body>
+</html>

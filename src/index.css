@@ -1,0 +1,678 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css");
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+label,
+input,
+button,
+.card-title,
+.form-control,
+.form-select,
+.navbar-brand,
+.filtro-categorias,
+.btn-categoria,
+.footer-title,
+.footer-link {
+  font-family: "Orbitron", "Roboto", sans-serif !important;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-custom {
+  background-color: #1e90ff !important;
+  padding: 10px 0;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #39ff14 !important;
+}
+
+h2 {
+  color: #39ff14;
+  border-bottom: 2px solid #1e90ff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+#catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.producto {
+  background-color: #111;
+  border: 1px solid #39ff14;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* Usar layout flex para distribuir título, imagen, precio y botón
+     y asegurar que el botón quede alineado en la parte inferior */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px; /* altura uniforme para todos los marcos */
+  height: 100%;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(57, 255, 20, 0.3);
+}
+
+.producto img {
+  /* Mantener la imagen centrada y sin recortes */
+  display: block;
+  margin: 12px auto 10px auto;
+  max-width: 100%;
+  max-height: 200px; /* límite vertical para que las tarjetas queden uniformes */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center center;
+  border-radius: 5px;
+  /* Evitar que la imagen cambie el tamaño del contenedor */
+  flex-shrink: 0;
+}
+
+/* Asegurar que el contenedor .ratio con .rounded recorte la imagen a las
+   esquinas redondeadas y mantenga la alineación correcta con el borde */
+.ratio.rounded {
+  overflow: hidden;
+}
+
+/* Footer dentro de cada tarjeta que contiene precio + botón */
+.producto-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+.producto-price {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+/* Estilo personalizado para el botón "Agregar al Carro" similar al diseño provisto
+   - Fondo oscuro, texto claro
+   - Borde verde neon, glow exterior
+   - Fuente Orbitron, tamaño grande y padding cómodo
+*/
+.agregarCarrito {
+  /* Fondo gris con borde neon verde */
+  background: #3a3a3a; /* gris oscuro */
+  color: #e9fef0; /* texto claro */
+  border: 2px solid #39ff14; /* borde verde neon */
+  padding: 12px 26px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: "Orbitron", "Roboto", sans-serif;
+  font-size: 1.02rem;
+  text-transform: none;
+  box-shadow: 0 6px 18px rgba(57,255,20,0.06) inset;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+.agregarCarrito:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(57,255,20,0.12) inset;
+}
+
+.producto h3 {
+  color: #1e90ff;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  /* Limitar espacio ocupado por el título para mantener uniformidad */
+  line-height: 1.1em;
+  max-height: 2.2em; /* aprox. 2 líneas */
+  overflow: hidden;
+}
+
+.producto p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+button.agregarCarrito,
+.btn-categoria {
+  font-family: "Orbitron", "Roboto", sans-serif !important;
+}
+
+button.agregarCarrito {
+  /* Asegurar que los botones tipo <button> con esta clase sigan el mismo estilo */
+  background: #3a3a3a; /* mismo gris */
+  color: #e9fef0;
+  border: 2px solid #39ff14;
+  padding: 12px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.02rem;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 6px 18px rgba(57,255,20,0.06) inset;
+}
+
+button.agregarCarrito:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(57,255,20,0.12) inset;
+}
+
+/* For product cards: make the agregarCarrito buttons fill the footer area
+   and have the rounded pill-like shape like the design example */
+.producto .agregarCarrito {
+  display: block;
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 28px;
+  font-size: 1.08rem;
+}
+
+/* Asegurar que el botón verde "Ver Detalle" dentro de la tarjeta tenga
+   exactamente las mismas dimensiones y forma que "Agregar al Carro" */
+.producto .btn-gamer-neon {
+  display: block;
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 28px;
+  font-size: 1.08rem;
+  text-align: center;
+}
+
+#carrito {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+#listaCarrito {
+  list-style-type: none;
+  padding: 0;
+}
+
+#listaCarrito li {
+  padding: 8px;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+#total {
+  font-size: 1.2rem;
+  color: #39ff14;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand img {
+    width: 100px;
+  }
+  .producto {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .producto {
+    flex: 0 0 100%;
+  }
+}
+
+.filtro-categorias {
+  background-color: #1a1a1a !important;
+  border: 1px solid #39ff14;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.filtro-categorias .card-title {
+  color: #1e90ff;
+  margin-bottom: 15px;
+}
+
+.btn-categoria {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  border: 1px solid #39ff14;
+  border-radius: 20px;
+  padding: 8px 15px;
+  transition: all 0.3s;
+}
+
+.btn-categoria:hover,
+.btn-categoria.active {
+  background-color: #39ff14;
+  color: #000;
+  font-weight: bold;
+}
+
+@media (max-width: 576px) {
+  .btn-categoria {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-inner img {
+    max-height: 200px;
+  }
+}
+
+.footer-gamer {
+  background: #111;
+}
+
+.footer-title {
+  border-left: 4px solid #39ff14;
+  padding-left: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: #fff;
+}
+
+.footer-link {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: #25d6db;
+  text-decoration: underline;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  color: #25d366;
+  text-decoration: underline;
+}
+
+.estrellas span {
+  cursor: pointer;
+  font-size: 1.3em;
+}
+.item-resena {
+  border-bottom: 1px solid #333;
+  padding: 6px 0;
+}
+
+.gamer-review-section {
+  background: #1a1f2b;
+  border: 3px solid #39ff14;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0, 224, 255, 0.2);
+  padding: 32px 24px 24px 24px;
+}
+
+.gamer-review-section .list-group-item {
+  background: rgba(34, 40, 49, 0.98);
+  border: 1px solid #252a34;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.gamer-review-section .fw-bold {
+  color: #00e0ff;
+}
+
+.gamer-review-section small.text-secondary {
+  color: #ff54f4 !important;
+}
+
+.btn-gamer-review {
+  color: #222630;
+  background: #ffe600;
+  border: 2px solid #ffe600;
+  font-family: "Orbitron", "Roboto", Arial, sans-serif;
+  font-size: 1.2rem;
+  padding: 3px 22px;
+  border-radius: 12px;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.btn-gamer-review:hover,
+.btn-gamer-review:focus {
+  background: #fff944;
+  color: #1a1f2b;
+  border-color: #fff944;
+}
+.titulo-resenas {
+  color: #1e90ff;
+  font-family: "Orbitron", "Roboto", Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+h2 {
+  color: #1e90ff;
+}
+.btn-gamer-resena {
+  color: #111 !important;
+}
+.btn-gamer-neon {
+  background: #39ff14;
+  color: #111 !important;
+  border-radius: 22px;
+  font-family: "Orbitron", "Roboto", Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  padding: 6px 20px;
+  transition: background 0.16s, color 0.18s;
+  letter-spacing: 1px;
+}
+
+.btn-gamer-neon:hover,
+.btn-gamer-neon:focus {
+  background: #baff4b;
+  color: #111 !important;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.gamer-navbar {
+  width: 100%;
+  background: linear-gradient(90deg, #118cff 70%, #2c2fdd 100%);
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Orbitron", "Arial", sans-serif;
+  position: relative;
+  z-index: 2;
+}
+.gamer-navbar-logo {
+  display: flex;
+  align-items: center;
+  z-index: 3;
+}
+.gamer-navbar-logo img {
+  height: 68px;
+  margin-right: 10px;
+}
+.gamer-navbar-logo span {
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px #00ffe7;
+  letter-spacing: 2px;
+}
+.gamer-navbar-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  justify-content: space-between;
+  transition: right 0.3s ease;
+}
+.gamer-navbar-search {
+  flex: 1;
+  display: flex;
+  max-width: 470px;
+  margin: 0 18px 0 26px;
+}
+.gamer-navbar-search input {
+  flex: 1;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 1.08rem;
+  outline: none;
+}
+.gamer-navbar-search button {
+  background: #111c4e;
+  color: #0feffd;
+  border: none;
+  padding: 0 14px;
+  border-radius: 0 4px 4px 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.gamer-navbar-search button:hover {
+  background: #0feffd;
+  color: #111c4e;
+}
+.gamer-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Mantener las acciones (Comunidad, Inicia sesión, Carrito) alineadas a la derecha */
+.gamer-navbar-actions {
+  margin-left: auto;
+}
+.gamer-navbar-actions a {
+  color: #fff;
+  background: transparent;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 5px 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: background 0.2s, color 0.2s;
+}
+.gamer-navbar-actions a:hover,
+.cart-btn {
+  background: #0feffd;
+  color: #181c2e;
+}
+.cart-btn {
+  font-weight: bold;
+}
+
+/* --- Hamburguesa --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  z-index: 4;
+  margin-left: 18px;
+}
+.hamburger span {
+  height: 4px;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 7px;
+  border-radius: 2px;
+  transition: 0.25s;
+  display: block;
+}
+.hamburger span:last-child {
+  margin-bottom: 0;
+}
+
+.toggle-menu {
+  display: none;
+}
+
+@media (max-width: 950px) {
+  .gamer-navbar {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+  .gamer-navbar-logo {
+    margin-left: 20px;
+  }
+  .gamer-navbar-content {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    background: linear-gradient(180deg, #181c33 85%, #0feffd 100%);
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 80px 0 20px 0;
+    transition: right 0.3s;
+    box-shadow: -2px 0 20px #0005;
+    max-width: unset;
+    z-index: 10;
+  }
+  .gamer-navbar-search {
+    width: 100%;
+    max-width: 324px;
+    margin: 20px 0 6px 0;
+    justify-content: center;
+  }
+  .gamer-navbar-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .gamer-navbar-search input {
+    font-size: 1.01rem;
+    max-width: 220px;
+    min-width: 0;
+  }
+  .hamburger {
+    display: flex;
+  }
+
+  .toggle-menu:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+  }
+  .toggle-menu:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .toggle-menu:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+  }
+  .toggle-menu:checked ~ .gamer-navbar-content {
+    right: 0;
+    z-index: 10;
+  }
+}
+@media (max-width: 600px) {
+  .gamer-navbar-logo img {
+    height: 40px;
+  }
+  .gamer-navbar-logo span {
+    font-size: 1.08rem;
+  }
+  .gamer-navbar {
+    padding: 10px 7px;
+  }
+}
+
+.close-nav-mobile {
+  display: none;
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  background: none;
+  color: #0feffd;
+  font-size: 2.7rem;
+  border: none;
+  cursor: pointer;
+  z-index: 50;
+  transition: color 0.2s;
+}
+.close-nav-mobile:hover {
+  color: #fff;
+}
+
+@media (max-width: 950px) {
+  .close-nav-mobile {
+    display: block;
+  }
+}
+
+/* --- Disable glow/destello on buttons globally --- */
+/* Esto anula efectos de box-shadow en botones para evitar destellos */
+button,
+.btn,
+.btn-gamer-green,
+.btn-gamer-outline,
+.btn-gamer-profile,
+.btn-categoria,
+.gamer-navbar-actions a,
+.cart-btn {
+  box-shadow: none !important;
+}
+
+button:focus,
+.btn:focus,
+.btn-gamer-green:focus,
+.btn-gamer-profile:focus,
+.btn-gamer-outline:focus,
+.btn-categoria:focus,
+.gamer-navbar-actions a:focus,
+.cart-btn:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Si hay sombras aplicadas en hover por selectores específicos, anularlas */
+.btn:hover,
+.btn-gamer-green:hover,
+.btn-gamer-profile:hover,
+.btn-gamer-outline:hover,
+.btn-categoria:hover,
+.gamer-navbar-actions a:hover,
+.cart-btn:hover {
+  box-shadow: none !important;
+}
+.gamer-cart-table {
+  background: #181c2e !important;
+  color: #fff !important;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.gamer-cart-thead {
+  background: #181c2e !important;
+  color: #1e90ff !important;
+}
+.gamer-cart-row {
+  background: #222 !important;
+  color: #fff !important;
+}

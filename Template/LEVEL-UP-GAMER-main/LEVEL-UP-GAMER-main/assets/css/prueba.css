@@ -1,0 +1,354 @@
+body {
+  background-color: #0a0a0a;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.gamer-navbar {
+  width: 100%;
+  background: linear-gradient(90deg, #118cff 70%, #2c2fdd 100%);
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Orbitron", "Arial", sans-serif;
+  position: relative;
+  z-index: 2;
+}
+.gamer-navbar-logo {
+  display: flex;
+  align-items: center;
+  z-index: 3;
+}
+.gamer-navbar-logo img {
+  height: 68px;
+  margin-right: 10px;
+}
+.gamer-navbar-logo span {
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px #00ffe7;
+  letter-spacing: 2px;
+}
+.gamer-navbar-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  justify-content: space-between;
+  transition: right 0.3s ease;
+}
+.gamer-navbar-search {
+  flex: 1;
+  display: flex;
+  max-width: 470px;
+  margin: 0 18px 0 26px;
+}
+.gamer-navbar-search input {
+  flex: 1;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 1.08rem;
+  outline: none;
+}
+.gamer-navbar-search button {
+  background: #111c4e;
+  color: #0feffd;
+  border: none;
+  padding: 0 14px;
+  border-radius: 0 4px 4px 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.gamer-navbar-search button:hover {
+  background: #0feffd;
+  color: #111c4e;
+}
+.gamer-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.gamer-navbar-actions a {
+  color: #fff;
+  background: transparent;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 5px 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: background 0.2s, color 0.2s;
+}
+.gamer-navbar-actions a:hover,
+.cart-btn {
+  background: #0feffd;
+  color: #181c2e;
+}
+.cart-btn {
+  font-weight: bold;
+}
+
+/* --- Hamburguesa --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  z-index: 4;
+  margin-left: 18px;
+}
+.hamburger span {
+  height: 4px;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 7px;
+  border-radius: 2px;
+  transition: 0.25s;
+  display: block;
+}
+.hamburger span:last-child {
+  margin-bottom: 0;
+}
+/* --- Menu toggle --- */
+.toggle-menu {
+  display: none;
+}
+
+/* ----------- RESPONSIVE ----------- */
+@media (max-width: 950px) {
+  .gamer-navbar {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+  .gamer-navbar-logo {
+    margin-left: 20px;
+  }
+  .gamer-navbar-content {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    background: linear-gradient(180deg, #181c33 85%, #0feffd 100%);
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 80px 0 20px 0;
+    transition: right 0.3s;
+    box-shadow: -2px 0 20px #0005;
+    max-width: unset;
+    z-index: 10;
+  }
+  .gamer-navbar-search {
+    width: 100%;
+    max-width: 324px;
+    margin: 20px 0 6px 0;
+    justify-content: center;
+  }
+  .gamer-navbar-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .gamer-navbar-search input {
+    font-size: 1.01rem;
+    max-width: 220px;
+    min-width: 0;
+  }
+  .hamburger {
+    display: flex;
+  }
+  /* Mostrar menú si checked */
+  .toggle-menu:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+  }
+  .toggle-menu:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .toggle-menu:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+  }
+  .toggle-menu:checked ~ .gamer-navbar-content {
+    right: 0;
+    z-index: 10;
+  }
+}
+@media (max-width: 600px) {
+  .gamer-navbar-logo img {
+    height: 40px;
+  }
+  .gamer-navbar-logo span {
+    font-size: 1.08rem;
+  }
+  .gamer-navbar {
+    padding: 10px 7px;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap");
+.modal-bg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+.modal-gamer-login {
+  background: #131313;
+  border-radius: 25px;
+  box-shadow: 0 0 32px 6px #00ff47, 0 0 0px 3px #00ff47 inset;
+  border: 3px solid #00ff47;
+  padding: 38px 36px 28px 36px;
+  max-width: 400px;
+  width: 90vw;
+  color: #fff;
+  font-family: "Orbitron", Arial, sans-serif;
+  position: relative;
+  animation: pop-in 0.2s cubic-bezier(0.61, 0.2, 0.29, 0.91);
+}
+@keyframes pop-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 22px;
+  background: none;
+  border: none;
+  color: #00ff47;
+  font-size: 2.4rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.2s;
+}
+.close-modal:hover {
+  color: #fff;
+}
+.modal-gamer-login h2 {
+  text-align: center;
+  color: #00ff47;
+  font-size: 2.3rem;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-weight: 700;
+  text-shadow: 0 0 12px #00ff47aa;
+}
+.modal-gamer-login form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.modal-gamer-login label {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  margin-bottom: 3px;
+}
+.modal-gamer-login input {
+  width: 100%;
+  font-size: 1.08rem;
+  font-family: "Orbitron", Arial, sans-serif;
+  padding: 13px 14px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #fff;
+  color: #222;
+  box-shadow: 0 2px 7px #0007;
+  transition: box-shadow 0.22s;
+}
+.modal-gamer-login input:focus {
+  box-shadow: 0 0 0 2px #00ff47aa;
+}
+.btn-gamer-profile {
+  background: #181c33;
+  color: #00ff47;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 1.15rem;
+  border: 2px solid #00ff47;
+  border-radius: 10px;
+  padding: 11px 5px;
+  font-weight: 700;
+  margin-bottom: 2px;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+}
+.btn-gamer-profile:hover {
+  background: #00ff47;
+  color: #181c33;
+  border-color: #00ff47;
+}
+.btn-gamer-green {
+  background: #14893e;
+  color: #fff;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 6px;
+  margin: 10px 0 7px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-gamer-green:hover {
+  background: #00ff47;
+  color: #222;
+}
+.btn-gamer-outline {
+  background: transparent;
+  color: #7c7c7c;
+  border: 2px solid #484849;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 1.13rem;
+  border-radius: 8px;
+  padding: 11px 5px;
+  cursor: pointer;
+  margin-bottom: 0;
+  transition: color 0.18s, border 0.18s, background 0.18s;
+}
+.btn-gamer-outline:hover {
+  border: 2px solid #00ff47;
+  color: #00ff47;
+  background: #111;
+}
+@media (max-width: 540px) {
+  .modal-gamer-login {
+    padding: 18px 6vw;
+  }
+  .modal-gamer-login h2 {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registro · Level-Up Gamer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/registrar.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/login_modal.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="gamer-navbar">
+        <div class="gamer-navbar-logo">
+          <img src="assets/Imagen/level-up.png" alt="Logo gamer" />
+          <span>LEVEL-UP GAMER</span>
+        </div>
+        <div class="gamer-navbar-actions">
+          <a href="index.html" class="home-btn" id="homeBtn">
+            <i class="fa fa-home"></i> Inicio
+          </a>
+          <a href="comunidad.html" class="comunidad-btn" id="comunidadBtn">
+            <i class="fa fa-users"></i> Comunidad
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="text-center mb-4">
+            <a href="index.html">
+              <img
+                src="assets/Imagen/level-up.png"
+                alt="Level-Up Gamer"
+                width="120"
+                height="auto"
+              />
+            </a>
+            <p class="text-muted mb-0">Registro de Usuarios</p>
+          </div>
+          <div class="card shadow-sm border-0 rounded-4">
+            <div class="card-body p-4">
+              <!-- Generamos un div para almacenar la alerta o el mensaje de ok -->
+              <div id="regAlert" class="alert d-none" role="alert"></div>
+              <form id="formRegistro" novalidate>
+                <div class="mb-3">
+                  <label class="form-label" for="nombre">Nombre completo</label>
+                  <input
+                    id="nombre"
+                    class="form-control"
+                    type="text"
+                    maxlength="50"
+                    placeholder="Ej: Juan Pérez"
+                    required
+                  />
+                  <!-- Añadimos además en cada input otro div (oculto) que mostrará el mensaje de error -->
+                  <div class="invalid-feedback">
+                    Sólo letras y espacios, máximo 50 caracteres.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="correo">Correo @duoc.cl</label>
+                  <input
+                    id="correo"
+                    class="form-control"
+                    type="email"
+                    placeholder="usuario@duoc.cl"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Debe ser un correo válido @duoc.cl y no estar registrado.
+                  </div>
+                </div>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="password">Contraseña</label>
+                    <input
+                      id="password"
+                      class="form-control"
+                      type="password"
+                      required
+                    />
+                    <div class="form-text">
+                      Mín. 8, con mayúscula, minúscula, número y símbolo.
+                    </div>
+                    <div class="invalid-feedback">
+                      La contraseña no cumple los requisitos.
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="password2"
+                      >Repetir contraseña</label
+                    >
+                    <input
+                      id="password2"
+                      class="form-control"
+                      type="password"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Las contraseñas no coinciden.
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3 mt-3">
+                  <label class="form-label" for="telefono"
+                    >Teléfono (opcional)</label
+                  >
+                  <input
+                    id="telefono"
+                    class="form-control"
+                    type="tel"
+                    placeholder="+56 9 1234 5678"
+                  />
+                  <div class="invalid-feedback">
+                    Ingresa un teléfono válido (7-15 dígitos/símbolos).
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="comuna">Comuna</label>
+                  <select id="comuna" class="form-select" required>
+                    <option value="">Selecciona tu comuna…</option>
+                  </select>
+                  <div class="invalid-feedback">Selecciona una comuna.</div>
+                </div>
+                <div class="d-grid gap-2 mt-4">
+                  <button type="submit" class="btn btn-primary">
+                    Crear cuenta
+                  </button>
+                  <a href="./login.html" class="btn btn-outline-secondary"
+                    >Ir a Login</a
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer-gamer mt-5 py-5">
+      <div class="container">
+        <div class="row text-white">
+          <div class="col-12 col-md-4 mb-4 mb-md-0">
+            <h4 class="footer-title">Ayuda</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="https://wa.me/56912345678?text=Hola,%20necesito%20ayuda%20con%20el%20servicio%20técnico%20de%20Level-Up%20Gamer"
+                  target="_blank"
+                  class="centro-ayuda-enlace"
+                >
+                  Centro de ayuda
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-4 mb-4 mb-md-0">
+            <h4 class="footer-title">Nosotros</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="nosotros.html" class="footer-link">Quiénes somos</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <h4 class="footer-title">Comunidad Level-UP</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="comunidad.html" class="footer-link">Comunidad</a>
+              </li>
+              <li>
+                <a href="comunidad.html" class="footer-link">Redes Sociales</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/registrar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

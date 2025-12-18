@@ -1,0 +1,164 @@
+body {
+  background: #0a0a0a;
+  font-family: "Orbitron", "Roboto", sans-serif;
+}
+
+.login-form-box {
+  background: #181818;
+  border: 2.5px solid #2dfc2d;
+  box-shadow: 0 0 20px #2dfc2d50;
+  padding: 32px;
+}
+
+.form-box-gamer {
+  background: #181818;
+  border: 2.5px solid #2dfc2d;
+  box-shadow: 0 0 20px #2dfc2d50;
+  padding: 32px;
+  margin: auto;
+}
+
+.login-title {
+  font-family: "Orbitron", sans-serif;
+  color: #2dfc2d;
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.form-label {
+  color: #fff;
+}
+
+.text-muted {
+  color: #39ff14 !important;
+  font-size: 2rem !important;
+  font-weight: 500;
+}
+
+/* Estilos personalizados para el formulario de inicio de sesión y registro
+   - Aplican estilos a los inputs y botones dentro de .form-box-gamer
+   - Eliminadas reglas de modal/animación innecesarias */
+.form-box-gamer input {
+  width: 100%;
+  font-size: 1.08rem;
+  font-family: "Orbitron", Arial, sans-serif;
+  padding: 13px 14px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #fff;
+  color: #222;
+  box-shadow: 0 2px 7px #0007;
+  transition: box-shadow 0.22s;
+}
+.form-box-gamer input:focus {
+  box-shadow: 0 0 0 2px #39ff14;
+}
+
+/* Botones estilo plantilla (puedes cambiar las clases de los botones a estas si prefieres) */
+.btn-gamer-profile {
+  background: #181c33;
+  color: #39ff14;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 1.15rem;
+  border: 2px solid #39ff14;
+  border-radius: 10px;
+  padding: 11px 5px;
+  font-weight: 700;
+  margin-bottom: 2px;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+}
+.btn-gamer-profile:hover {
+  background: #39ff14;
+  color: #181c33;
+  border-color: #39ff14;
+}
+.btn-gamer-green {
+  background: #39ff14;
+  color: #fff;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 6px;
+  margin: 10px 0 7px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-gamer-green:hover {
+  background: #39ff14;
+  color: #222;
+}
+.btn-gamer-outline {
+  background: transparent;
+  color: #7c7c7c;
+  border: 2px solid #484849;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 1.13rem;
+  border-radius: 8px;
+  padding: 11px 5px;
+  cursor: pointer;
+  margin-bottom: 0;
+  transition: color 0.18s, border 0.18s, background 0.18s;
+}
+.btn-gamer-outline:hover {
+  border: 2px solid #39ff14;
+  color: #39ff14;
+  background: #111;
+}
+
+@media (max-width: 540px) {
+  .form-box-gamer {
+    padding: 18px 6vw;
+  }
+  .login-title {
+    font-size: 1.4rem;
+  }
+}
+/* Asegurar que los botones del form de login tengan el mismo tamaño y ancho */
+.form-box-gamer .d-grid .btn,
+.form-box-gamer .d-grid .btn-gamer-profile,
+.form-box-gamer .d-grid .btn-gamer-outline {
+  display: block;
+  width: 100%;        /* ancho completo como antes */
+  min-height: 48px; /* más delgado verticalmente */
+  border-radius: 12px;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 1.15rem;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+}
+
+/* Ajustes visuales para que el botón perfil mantenga el borde verde y centrado */
+.btn-gamer-profile {
+  background: #181c33;
+  color: #39ff14;
+  border: 2px solid #39ff14;
+  box-shadow: none;
+}
+
+/* Mantener contraste del botón outline al ocupar todo el ancho */
+.form-box-gamer .d-grid .btn.btn-outline-secondary {
+  background: transparent;
+  color: #7c7c7c;
+  border: 2px solid #484849;
+}
+
+@media (max-width: 540px) {
+  .form-box-gamer .d-grid .btn,
+  .form-box-gamer .d-grid .btn-gamer-profile,
+  .form-box-gamer .d-grid .btn-gamer-outline {
+    min-height: 44px;
+    font-size: 1.0rem;
+    width: 100%; /* en móvil siguen ocupando todo el ancho disponible */
+  }
+}

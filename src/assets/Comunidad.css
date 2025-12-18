@@ -1,0 +1,171 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+label,
+input,
+button,
+.card-title,
+.form-control,
+.form-select,
+.nav-link,
+.navbar-brand,
+.gamer-link,
+.gamer-cart-link,
+.gamer-user-link,
+.badge {
+  font-family: "Orbitron", "Roboto", sans-serif !important;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-custom {
+  background-color: #1e90ff !important;
+  padding: 10px 0;
+  background: #39ff14;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #39ff14 !important;
+}
+
+.card-title,
+h1,
+h2,
+h3 {
+  color: #1e90ff;
+}
+h2,
+h3 {
+  border-bottom: 2px solid #39ff14;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand img {
+    width: 100px;
+  }
+  .producto {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+@media (max-width: 576px) {
+  .producto {
+    flex: 0 0 100%;
+  }
+}
+
+.bg-info {
+  background-color: #111 !important;
+  border: 2px solid #39ff14;
+}
+
+.redes-sociales,
+.noticia-card {
+  background-color: #111;
+  border: 1px solid #39ff14;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+  margin: 12px;
+}
+
+.noticia-card {
+  text-align: left;
+}
+
+.form-control::placeholder {
+  color: #bbb;
+}
+.btn-outline-light:hover {
+  background: #39ff14;
+  border-color: #39ff14;
+  color: #fff;
+}
+
+.border-info {
+  border-color: #39ff14 !important;
+  border: 1px solid #39ff14;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #39ff14 !important;
+  box-shadow: 0 0 0 0.2rem rgba(24, 255, 24, 0.25) !important;
+}
+
+.gamer-user-section {
+  background: transparent;
+}
+.gamer-user-link:hover,
+.gamer-cart-link:hover {
+  color: #39ff14 !important;
+  text-shadow: 0 0 8px #39ff14;
+}
+.gamer-user-link svg,
+.gamer-cart-link svg {
+  transition: stroke 0.2s;
+}
+.gamer-user-link:hover svg,
+.gamer-cart-link:hover svg {
+  stroke: #39ff14;
+}
+
+.navbar-gamer {
+  background-color: #39ff14 !important;
+  box-shadow: 0 0 16px #00ff3c80;
+  border-bottom: 2px solid #00ff3c;
+}
+
+.gamer-search-btn {
+  border: 2px solid #111;
+  color: #111;
+  background: #39ff14 !important;
+}
+
+.gamer-link,
+.gamer-cart-link,
+.gamer-user-link {
+  color: #111 !important;
+  text-shadow: 0 0 6px #39ff14;
+}
+
+.badge {
+  border: none !important;
+  background: #111 !important;
+  color: #1e90ff !important;
+  font-size: 1.1rem;
+  padding: 4px 16px;
+  box-shadow: none !important;
+}
+.btn .svg-icon {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+}
+.btn {
+  filter: drop-shadow(0 0 2px #00ffae);
+  transition: box-shadow 0.15s;
+}
+.btn:hover {
+  box-shadow: 0 0 14px #0ff;
+}
