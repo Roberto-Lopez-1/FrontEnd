@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../assets/perfil.css";
+import "../assets/Perfil.css";
 
 export const Perfil = () => {
   return (
