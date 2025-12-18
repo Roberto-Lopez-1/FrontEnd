@@ -12,7 +12,6 @@ export const Navbar = () => {
 
   // Extraer el objeto usuario interno
   const usuario = datosAlmacenados?.usuario || null;
-  const token = datosAlmacenados?.token || null;
 
   const cerrarSesion = () => {
     localStorage.removeItem("usuario");

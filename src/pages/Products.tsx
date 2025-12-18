@@ -1,6 +1,6 @@
 import { HomeCarousel } from "../components/Carousel";
 import { Reviews } from "../components/Reviews";
-import { Link, useSearchParams, useNavigate } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { useState, useMemo, useContext, useEffect } from "react";
 import { CartContext } from "../context/CartContext";
 import "../assets/Filtros.css";
@@ -17,13 +17,9 @@ export const Products = () => {
 
   // Extraer el objeto usuario interno
   const usuario = datosAlmacenados?.usuario || null;
-  const token = datosAlmacenados?.token || null;
 
-  const cerrarSesion = () => {
-    localStorage.removeItem("usuario");
-    localStorage.removeItem("token");
-    navigate("/login");
-  };
+
+
 
   const [products, setProducts] = useState<Product[]>([]);
   const [categorias, setCategorias] = useState<Categoria[]>([]);
